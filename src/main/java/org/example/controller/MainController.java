@@ -45,7 +45,7 @@ public class MainController implements Observer{
     private Button btn_start;
 
     @FXML
-    private Rectangle enter_waitress;
+    private Circle enter_waitress;
 
 
     @FXML
@@ -58,13 +58,13 @@ public class MainController implements Observer{
     private Circle deliver_command;
 
     @FXML
-    private Rectangle enter_diner;
+    private Circle enter_diner;
 
     @FXML
-    private Rectangle exit;
+    private Circle exit;
 
     @FXML
-    private Rectangle exit_door;
+    private Circle exit_door;
 
     @FXML
     private HBox queue_wait;
@@ -140,12 +140,12 @@ public class MainController implements Observer{
     private void leaveDiner(){
         Diner diner=exitMonitor.removeFromExitQueue();
         StackPane stackPane= getTable(diner.getTableId());
-        Rectangle rectangle=(Rectangle) stackPane.getChildren().get(0);
+        Circle circle=(Circle) stackPane.getChildren().get(0);
         Text text = (Text) stackPane.getChildren().get(1);
         Platform.runLater(()->{
             text.setText("-");
             text.setFill(Color.WHITE);
-            rectangle.setFill(EmptySpaceColor);
+            circle.setFill(EmptySpaceColor);
             exit_door.setFill(diner.getColor());
         });
         waitSecond(2);
@@ -226,7 +226,7 @@ public class MainController implements Observer{
     }
 
     private void enterDinerToEntrace(){
-        Rectangle popDiner= (Rectangle) queue_wait.getChildren().get(0);
+        Circle popDiner= (Circle) queue_wait.getChildren().get(0);
         Platform.runLater(()->{
             enter_diner.setFill(popDiner.getFill());
             queue_wait.getChildren().remove(popDiner);
@@ -235,9 +235,9 @@ public class MainController implements Observer{
     private void sitDinerAtSomeTable(){
         for(Node hboxNode:tables.getChildren()){
             HBox hbox=(HBox) hboxNode;
-            Rectangle waitress = (Rectangle) hbox.getChildren().get(0);
+            Circle waitress = (Circle) hbox.getChildren().get(0);
             StackPane stackPane= (StackPane) hbox.getChildren().get(1);
-            Rectangle diner = (Rectangle) stackPane.getChildren().get(0);
+            Circle diner = (Circle) stackPane.getChildren().get(0);
             if(EmptySpaceColor.equals(diner.getFill())){
                 sitDiner(waitress, stackPane);
                 waitSecond(1);
@@ -247,8 +247,8 @@ public class MainController implements Observer{
         }
     }
 
-    private void sitDiner( Rectangle waitress,StackPane stackPane){
-        Rectangle diner = (Rectangle) stackPane.getChildren().get(0);
+    private void sitDiner( Circle waitress,StackPane stackPane){
+        Circle diner = (Circle) stackPane.getChildren().get(0);
         Text text = (Text) stackPane.getChildren().get(1);
         Platform.runLater(()->{
             enter_waitress.setFill(EmptySpaceColor);
@@ -260,19 +260,20 @@ public class MainController implements Observer{
         });
     }
 
-    private void waitresReturnEntrace(Rectangle waitress){
+    private void waitresReturnEntrace(Circle waitress){
         Platform.runLater(()->{
             enter_waitress.setFill(WaitresColor);
             waitress.setFill(EmptySpaceColor);
         });
     }
-    private void addDinerToQueueWait(){
-        Diner newDiner=this.dinerMonitor.getQueue_wait().getLast();
-        Rectangle square = new Rectangle(50, 50, newDiner.getColor());
-        square.setArcHeight(30);
-        square.setArcWidth(30);
-        Platform.runLater(()->{queue_wait.getChildren().add(square);});
+    private void addDinerToQueueWait() {
+        Diner newDiner = this.dinerMonitor.getQueue_wait().getLast();
+        Circle circle = new Circle(25, newDiner.getColor()); // Círculo con radio 25 y color del comensal
+        Platform.runLater(() -> {
+            queue_wait.getChildren().add(circle); // Agrega el círculo a la cola visual
+        });
     }
+
 
     private void waitSecond(int second){
         int milliseconds= second*1000;

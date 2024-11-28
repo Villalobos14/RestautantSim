@@ -17,28 +17,28 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.shape.Circle?>
-<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #000fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #394240;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
     </padding>
     <children>
         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Made by: VillalobosAlejandro &amp; Cundapitoledo">
             <font>
-                <Font name="Roboto bold" size="22" />
+                <Font name="Roboto bold" size="10" />
             </font>
         </Text>
-        <GridPane prefHeight="41.0" prefWidth="782.0" style="-fx-border-color: white white transparent white;;">
+        <GridPane prefHeight="10.0" prefWidth="600.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="1.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <!-- First HBox with a Circle -->
-                <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0">
+                <HBox alignment="TOP_CENTER" prefHeight="2.0" prefWidth="392.0" spacing="20.0">
                     <children>
                         <!-- Grupo de elementos para representar a una persona -->
                         <Group >
@@ -109,15 +109,15 @@
                 </HBox>
             </children>
             <padding>
-                <Insets bottom="10.0" top="50.0" />
+                <Insets bottom="5.0" top="25.0" />
             </padding>
         </GridPane>
-        <HBox prefHeight="37.0" prefWidth="960.0">
+        <HBox prefHeight="3" prefWidth="400">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000" height="38.0" stroke="BLACK" strokeType="INSIDE" width="962.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff" height="38.0"  strokeType="INSIDE" width="962.0" />
             </children>
         </HBox>
-        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-border-color: transparent white transparent white;">
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" >
             <children>
                 <GridPane prefHeight="41.0" prefWidth="782.0">
                     <columnConstraints>
@@ -131,13 +131,13 @@
                     <children>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0">
                             <children>
-                                <Circle fx:id="receive_command" centerX="25" centerY="25" radius="25" fill="#000000" stroke="#ffffff" strokeType="INSIDE" />
+                                <Circle fx:id="receive_command" centerX="25" centerY="25" radius="25" fill="#f06b50" stroke="#ffffff" strokeType="INSIDE" />
                             </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" />
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2">
                             <children>
-                                <Circle fx:id="add_command" centerX="25" centerY="25" radius="25" fill="#000000" stroke="#ffffff" strokeType="INSIDE" />
+                                <Circle fx:id="add_command" centerX="25" centerY="25" radius="25" fill="#f06b50" stroke="#ffffff" strokeType="INSIDE" />
                             </children>
                         </HBox>
                     </children>
@@ -163,13 +163,13 @@
                         <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="120.0" prefHeight="200.0" prefWidth="392.0" spacing="20.0">
                             <children>
                                 <!-- Primer círculo -->
-                                <Circle centerX="25" centerY="25" radius="25" fill="#00FF00" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="50.0">
                                     <children>
                                         <!-- Círculo dentro del StackPane -->
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#00FF00" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#a0b046" stroke="#fffffffe" strokeType="INSIDE" />
                                         <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
@@ -179,13 +179,13 @@
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="1">
                             <children>
                                 <!-- Primer círculo -->
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
                                         <!-- Círculo dentro del StackPane -->
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#a0b046" stroke="#fffffffe" strokeType="INSIDE" />
                                         <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
@@ -195,13 +195,13 @@
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="2">
                             <children>
                                 <!-- Primer círculo -->
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
                                         <!-- Círculo dentro del StackPane -->
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#a0b046" stroke="#fffffffe" strokeType="INSIDE" />
                                         <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
@@ -211,13 +211,13 @@
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="3">
                             <children>
                                 <!-- Primer círculo -->
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
                                         <!-- Círculo dentro del StackPane -->
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#a0b046" strokeType="INSIDE" />
                                         <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
@@ -227,28 +227,33 @@
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="4">
                             <children>
                                 <!-- Primer círculo -->
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
                                         <!-- Círculo dentro del StackPane -->
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#a0b046"  strokeType="INSIDE" />
                                         <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
+
+
+                        <!-- segunda fila de mesas -->
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1">
                             <children>
                                 <!-- Primer círculo -->
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f24e4e" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -257,11 +262,11 @@
 
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f24e4e"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -270,11 +275,11 @@
 
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f24e4e"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -283,11 +288,11 @@
 
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f24e4e"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -296,24 +301,24 @@
 
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
 
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f24e4e"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
-
+                        <!-- tercera fila de mesas -->
 
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#11644d" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -321,10 +326,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#11644d"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -332,10 +337,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#11644d"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -343,10 +348,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#11644d"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -354,10 +359,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#11644d" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -365,13 +370,15 @@
                         </HBox>
 
 
+                        <!-- cuarta fila de mesas -->
+
 
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f78145"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -379,10 +386,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f78145"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -390,10 +397,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f78145" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -401,10 +408,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f78145"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -412,10 +419,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                             <children>
-                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#f2c94e"  strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#f78145"  strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -425,20 +432,25 @@
 
 
                     <padding>
-                        <Insets bottom="50.0" right="100.0" top="50.0" />
+                        <Insets bottom="25.0" right="5.0" top="5.0" />
                     </padding>
                 </GridPane>
                 <HBox alignment="BOTTOM_RIGHT" prefHeight="43.0" prefWidth="967.0" spacing="20.0">
                     <children>
-                        <Rectangle fx:id="enter_diner" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                        <!-- waiter (enter_diner) -->
+                        <Circle fx:id="enter_diner" centerX="25" centerY="25" radius="25" fill="#f38630"  strokeType="INSIDE" />
+
                         <VBox alignment="BOTTOM_CENTER" prefHeight="6.0" prefWidth="100.0">
-                            <!-- waiter -->
+                            <!-- waiter (enter_waitress) -->
                             <children>
-                                <Rectangle fx:id="enter_waitress" arcHeight="5.0" arcWidth="5.0" fill="#ffffff" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle fx:id="enter_waitress" centerX="25" centerY="25" radius="25" fill="#4180ab"  strokeType="INSIDE" />
                             </children>
                         </VBox>
-                        <Rectangle fx:id="exit_door" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+
+                        <!-- waiter (exit_door) -->
+                        <Circle fx:id="exit_door" centerX="25" centerY="25" radius="25" fill="#f38630"  strokeType="INSIDE" />
                     </children>
+
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -446,7 +458,7 @@
                         <Insets />
                     </VBox.margin>
                     <padding>
-                        <Insets right="30.0" />
+                        <Insets right="350.0" />
                     </padding>
                 </HBox>
             </children>
@@ -454,37 +466,45 @@
                 <Insets />
             </VBox.margin>
             <padding>
-                <Insets bottom="20.0" top="20.0" />
+                <Insets bottom="5.0" top="5.0" />
             </padding>
         </VBox>
-        <HBox prefHeight="37.0" prefWidth="960.0">
-            <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="38.0" stroke="WHITE" strokeType="INSIDE" width="672.0" />
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="38.0" stroke="#ffffff00" strokeType="INSIDE" width="270.0" />
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="38.0" stroke="WHITE" strokeType="INSIDE" width="25.0" />
-            </children>
-        </HBox>
+
+        <!-- queue line -->
         <HBox alignment="TOP_RIGHT">
             <children>
                 <HBox fx:id="queue_wait" alignment="TOP_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="68.0" spacing="10.0">
                     <padding>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets top="20.0" left="10.0" right="10.0" />
                     </padding>
                 </HBox>
                 <Pane prefHeight="50.0" prefWidth="84.0" />
                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="114.0">
                     <children>
-                        <Rectangle fx:id="exit" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                        <Circle fx:id="exit" centerX="25" centerY="25" radius="25" fill="#ffffff" stroke="WHITE" strokeType="INSIDE" />
+
                     </children>
                 </HBox>
             </children>
         </HBox>
-        <HBox alignment="TOP_CENTER" prefHeight="27.0" prefWidth="964.0">
+        <HBox alignment="TOP_CENTER" prefHeight="7.0" prefWidth="700">
             <children>
-                <Button fx:id="btn_start" mnemonicParsing="false" onMouseClicked="#onClickedStart" prefHeight="40" prefWidth="100" style="-fx-border-color: #000000" styleClass="button" text="Start" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="btn_start" mnemonicParsing="false" onMouseClicked="#onClickedStart"
+                        prefHeight="20" prefWidth="200"
+                        style="-fx-background-color: #fa6900;
+           -fx-text-fill: #FFFFFF;
+           -fx-font-size: 24px;
+          ">
                     <font>
-                        <Font name="Hack Regular Nerd Font Complete Mono" size="12.0" />
-                    </font></Button>
+                        <Font name="Hack Regular Nerd Font Complete Mono" size="24.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <text>
+                        Start simulation
+                    </text>
+                </Button>
             </children>
         </HBox>
     </children>
