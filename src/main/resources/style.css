@@ -1,0 +1,6 @@
+.vbox-background {
+    -fx-background-image: url('images/hola.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}

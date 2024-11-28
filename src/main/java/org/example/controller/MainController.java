@@ -1,5 +1,8 @@
 package org.example.controller;
 
+import javafx.scene.Group;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Path;
 import org.example.models.*;
 import org.example.threads.*;
 import javafx.animation.KeyFrame;
@@ -31,12 +34,12 @@ public class MainController implements Observer{
 
     private ChefMonitor chefMonitor;
 
-    private final Color EmptySpaceColor=Color.web("#232424");
+    private final Color EmptySpaceColor=Color.web("#98FB98");
 
 
-    private final Color WaitresColor=Color.web("#f87b72");
+    private final Color WaitresColor=Color.web("#FFD700");
 
-    private final Color ChefColor=Color.web("#7dc0ff");
+    private final Color ChefColor=Color.web("#FF6F61");
 
     @FXML
     private Button btn_start;
@@ -46,13 +49,13 @@ public class MainController implements Observer{
 
 
     @FXML
-    private Rectangle add_command;
+    private Circle add_command;
 
     @FXML
-    private Rectangle cooking_command;
+    private Circle cooking_command;
 
     @FXML
-    private Rectangle deliver_command;
+    private Circle deliver_command;
 
     @FXML
     private Rectangle enter_diner;
@@ -67,13 +70,13 @@ public class MainController implements Observer{
     private HBox queue_wait;
 
     @FXML
-    private Rectangle receive_command;
+    private Circle receive_command;
 
     @FXML
     private GridPane tables;
 
     @FXML
-    private Rectangle wait_command;
+    private Circle wait_command;
     @FXML
     public void initialize() {
         this.restaurant=new Restaurant();

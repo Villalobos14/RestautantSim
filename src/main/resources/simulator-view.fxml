@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,14 +16,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #1a1b1a;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
+<?import javafx.scene.shape.Circle?>
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #000fff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
     <children>
         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Made by: VillalobosAlejandro &amp; Cundapitoledo">
             <font>
-                <Font name="Hack Bold Nerd Font Complete" size="12.0" />
+                <Font name="Roboto bold" size="22" />
             </font>
         </Text>
         <GridPane prefHeight="41.0" prefWidth="782.0" style="-fx-border-color: white white transparent white;;">
@@ -33,19 +37,74 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
+                <!-- First HBox with a Circle -->
                 <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0">
                     <children>
-                        <Rectangle fx:id="deliver_command" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#7dc0ff" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                        <!-- Grupo de elementos para representar a una persona -->
+                        <Group >
+                            <!-- Cabeza -->
+                            <Circle fx:id="deliver_command" centerX="50" centerY="30" radius="25" fill="#FAD7A0" />
+
+                            <!-- Torso -->
+                            <Ellipse  centerX="50" centerY="60" radiusX="20" radiusY="20" fill="#ffffff" />
+                            <!-- Brazo izquierdo -->
+                            <Ellipse  centerX="30" centerY="60" radiusX="7" radiusY="20" fill="#ffffff" />
+
+                            <!-- Brazo derecho -->
+                            <Ellipse  centerX="70" centerY="60" radiusX="7" radiusY="20" fill="#ffffff" />
+                            <!-- Ala del sombrero -->
+                            <Ellipse  centerX="50" centerY="15" radiusX="30" radiusY="7" fill="#ffffff" />
+
+                            <!-- Parte superior del sombrero -->
+                            <Rectangle  x="35" y="0" width="30" height="15" fill="#ffffff" />
+                        </Group>
                     </children>
+
                 </HBox>
+
+                <!-- Second HBox with a Circle -->
                 <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1">
                     <children>
-                        <Rectangle fx:id="cooking_command" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#7dc0ff" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                        <Group >
+                            <!-- Cabeza -->
+                            <Circle fx:id="cooking_command" centerX="50" centerY="30" radius="25" fill="#FAD7A0" />
+
+                            <!-- Torso -->
+                            <Ellipse  centerX="50" centerY="60" radiusX="20" radiusY="20" fill="#ffffff" />
+                            <!-- Brazo izquierdo -->
+                            <Ellipse  centerX="30" centerY="60" radiusX="7" radiusY="20" fill="#ffffff" />
+
+                            <!-- Brazo derecho -->
+                            <Ellipse  centerX="70" centerY="60" radiusX="7" radiusY="20" fill="#ffffff" />
+                            <!-- Ala del sombrero -->
+                            <Ellipse  centerX="50" centerY="15" radiusX="30" radiusY="7" fill="#ffffff" />
+
+                            <!-- Parte superior del sombrero -->
+                            <Rectangle  x="35" y="0" width="30" height="15" fill="#ffffff" />
+                        </Group>
                     </children>
                 </HBox>
+
+                <!-- Third HBox with a Circle -->
                 <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2">
                     <children>
-                        <Rectangle fx:id="wait_command" arcHeight="5.0" arcWidth="5.0" fill="#7dc0ff" height="50.0" stroke="#7dc0ff" strokeType="INSIDE" style="-fx-arc-width: 30; -fx-arc-height: 30;" width="50.0" />
+                        <Group >
+                            <!-- Cabeza -->
+                            <Circle fx:id="wait_command" centerX="50" centerY="30" radius="25" fill="#FAD7A0" />
+
+                            <!-- Torso -->
+                            <Ellipse  centerX="50" centerY="60" radiusX="20" radiusY="20" fill="#ffffff" />
+                            <!-- Brazo izquierdo -->
+                            <Ellipse  centerX="30" centerY="60" radiusX="7" radiusY="20" fill="#ffffff" />
+
+                            <!-- Brazo derecho -->
+                            <Ellipse  centerX="70" centerY="60" radiusX="7" radiusY="20" fill="#ffffff" />
+                            <!-- Ala del sombrero -->
+                            <Ellipse  centerX="50" centerY="15" radiusX="30" radiusY="7" fill="#ffffff" />
+
+                            <!-- Parte superior del sombrero -->
+                            <Rectangle  x="35" y="0" width="30" height="15" fill="#ffffff" />
+                        </Group>
                     </children>
                 </HBox>
             </children>
@@ -55,7 +114,7 @@
         </GridPane>
         <HBox prefHeight="37.0" prefWidth="960.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="38.0" stroke="WHITE" strokeType="INSIDE" width="962.0" />
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000" height="38.0" stroke="BLACK" strokeType="INSIDE" width="962.0" />
             </children>
         </HBox>
         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-border-color: transparent white transparent white;">
@@ -72,13 +131,13 @@
                     <children>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0">
                             <children>
-                                <Rectangle fx:id="receive_command" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle fx:id="receive_command" centerX="25" centerY="25" radius="25" fill="#000000" stroke="#ffffff" strokeType="INSIDE" />
                             </children>
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" />
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2">
                             <children>
-                                <Rectangle fx:id="add_command" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle fx:id="add_command" centerX="25" centerY="25" radius="25" fill="#000000" stroke="#ffffff" strokeType="INSIDE" />
                             </children>
                         </HBox>
                     </children>
@@ -103,10 +162,15 @@
                     <children>
                         <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="120.0" prefHeight="200.0" prefWidth="392.0" spacing="20.0">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
-                                <StackPane prefHeight="50.0" prefWidth="46.0">
+                                <!-- Primer círculo -->
+                                <Circle centerX="25" centerY="25" radius="25" fill="#00FF00" stroke="#f87b72" strokeType="INSIDE" />
+
+                                <!-- StackPane con un círculo y texto -->
+                                <StackPane prefHeight="50.0" prefWidth="50.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <!-- Círculo dentro del StackPane -->
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#00FF00" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -114,10 +178,15 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="1">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <!-- Primer círculo -->
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
+                                <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <!-- Círculo dentro del StackPane -->
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -125,10 +194,15 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="2">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <!-- Primer círculo -->
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
+                                <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <!-- Círculo dentro del StackPane -->
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -136,10 +210,15 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="3">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <!-- Primer círculo -->
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
+                                <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <!-- Círculo dentro del StackPane -->
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -147,10 +226,15 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.rowIndex="4">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <!-- Primer círculo -->
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
+                                <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <!-- Círculo dentro del StackPane -->
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
+                                        <!-- Texto superpuesto -->
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -158,65 +242,78 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <!-- Primer círculo -->
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
+                                <!-- StackPane con un círculo y texto -->
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
+
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -224,10 +321,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -235,10 +332,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -246,10 +343,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -257,21 +354,24 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
+
+
+
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -279,10 +379,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -290,10 +390,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -301,10 +401,10 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
@@ -312,16 +412,18 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="392.0" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#f87b72" strokeType="INSIDE" />
                                 <StackPane prefHeight="50.0" prefWidth="46.0">
                                     <children>
-                                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="#fffffffe" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                        <Circle centerX="25" centerY="25" radius="25" fill="#232424" stroke="#fffffffe" strokeType="INSIDE" />
                                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
                                     </children>
                                 </StackPane>
                             </children>
                         </HBox>
                     </children>
+
+
                     <padding>
                         <Insets bottom="50.0" right="100.0" top="50.0" />
                     </padding>
@@ -330,8 +432,9 @@
                     <children>
                         <Rectangle fx:id="enter_diner" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
                         <VBox alignment="BOTTOM_CENTER" prefHeight="6.0" prefWidth="100.0">
+                            <!-- waiter -->
                             <children>
-                                <Rectangle fx:id="enter_waitress" arcHeight="5.0" arcWidth="5.0" fill="#f87b72" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
+                                <Rectangle fx:id="enter_waitress" arcHeight="5.0" arcWidth="5.0" fill="#ffffff" height="50.0" stroke="#f87b72" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
                             </children>
                         </VBox>
                         <Rectangle fx:id="exit_door" arcHeight="5.0" arcWidth="5.0" fill="#232424" height="50.0" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="50.0" />
@@ -378,7 +481,7 @@
         </HBox>
         <HBox alignment="TOP_CENTER" prefHeight="27.0" prefWidth="964.0">
             <children>
-                <Button fx:id="btn_start" mnemonicParsing="false" onMouseClicked="#onClickedStart" prefHeight="35.0" prefWidth="79.0" style="-fx-border-color: #ffffff" styleClass="button" text="Start" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+                <Button fx:id="btn_start" mnemonicParsing="false" onMouseClicked="#onClickedStart" prefHeight="40" prefWidth="100" style="-fx-border-color: #000000" styleClass="button" text="Start" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                     <font>
                         <Font name="Hack Regular Nerd Font Complete Mono" size="12.0" />
                     </font></Button>
