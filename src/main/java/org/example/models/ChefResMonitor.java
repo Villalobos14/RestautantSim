@@ -4,22 +4,21 @@ import org.example.models.enums.DinerState;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class ChefMonitor {
-    private Queue<Diner> commands;
+public class ChefResMonitor {
+    private Queue<DinerClient> commands;
 
-    private Deque<Diner> orders;
+    private Deque<DinerClient> orders;
 
     private Restaurant restaurant;
 
     private int TOTAL;
 
-    public ChefMonitor(Restaurant restaurant){
-        this.commands=new LinkedList<Diner>();
-        this.orders=new LinkedList<Diner>();
+    public ChefResMonitor(Restaurant restaurant){
+        this.commands=new LinkedList<DinerClient>();
+        this.orders=new LinkedList<DinerClient>();
         this.restaurant=restaurant;
         this.TOTAL=20;
 
@@ -32,10 +31,10 @@ public class ChefMonitor {
                 throw new RuntimeException(e);
             }
         }
-        Diner diner=commands.remove();
-        diner.setState(DinerState.EAT);
-        diner.setTime(getRandomEatTime());
-        orders.add(diner);
+        DinerClient dinerClient =commands.remove();
+        dinerClient.setState(DinerState.EAT);
+        dinerClient.setTime(getRandomEatTime());
+        orders.add(dinerClient);
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(5000));
         } catch (InterruptedException e) {
@@ -57,10 +56,10 @@ public class ChefMonitor {
                 throw new RuntimeException(e);
             }
         }
-        Diner dinerOrder=restaurant.getDinnerByState(DinerState.SIT_WITHOUT_ORDER);
-        if(dinerOrder!=null){
-            dinerOrder.setState(DinerState.WAIT_ORDER);
-            commands.add(dinerOrder);
+        DinerClient dinerClientOrder =restaurant.getDinnerByState(DinerState.SIT_WITHOUT_ORDER);
+        if(dinerClientOrder !=null){
+            dinerClientOrder.setState(DinerState.WAIT_ORDER);
+            commands.add(dinerClientOrder);
         }
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000));
@@ -70,7 +69,7 @@ public class ChefMonitor {
         this.notifyAll();
     }
 
-    public Deque<Diner> getOrders() {
+    public Deque<DinerClient> getOrders() {
         return orders;
     }
 }

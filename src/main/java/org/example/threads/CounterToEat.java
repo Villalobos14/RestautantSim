@@ -1,29 +1,29 @@
 package org.example.threads;
 
-import org.example.models.Diner;
+import org.example.models.DinerClient;
 import org.example.models.ExitMonitor;
 import org.example.models.enums.DinerState;
 
 public class CounterToEat implements Runnable {
     private ExitMonitor exitMonitor;
-    private Diner diner;
+    private DinerClient dinerClient;
 
-    public CounterToEat(ExitMonitor exitMonitor, Diner diner) {
+    public CounterToEat(ExitMonitor exitMonitor, DinerClient dinerClient) {
         this.exitMonitor = exitMonitor;
-        this.diner = diner;
+        this.dinerClient = dinerClient;
     }
 
     @Override
     public void run() {
-        while (diner.getTime()>0){
+        while (dinerClient.getTime()>0){
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            diner.decrementTime();
+            dinerClient.decrementTime();
         }
-        diner.setState(DinerState.EAT_FINISH);
+        dinerClient.setState(DinerState.EAT_FINISH);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

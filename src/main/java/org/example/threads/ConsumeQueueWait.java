@@ -2,21 +2,19 @@ package org.example.threads;
 
 
 import java.util.Observable;
-import org.example.models.DinerMonitor;
-import org.example.models.Restaurant;
+import org.example.models.DinerClientMonitor;
 
-import java.util.ArrayList;
 public class ConsumeQueueWait  extends Observable implements Runnable{
-    private DinerMonitor dinerMonitor;
+    private DinerClientMonitor dinerClientMonitor;
 
-    public ConsumeQueueWait(DinerMonitor dinerMonitor){
-        this.dinerMonitor=dinerMonitor;
+    public ConsumeQueueWait(DinerClientMonitor dinerClientMonitor){
+        this.dinerClientMonitor = dinerClientMonitor;
     }
     @Override
     public void run() {
         while (true){
             System.out.println("ESTOY AQUI");
-            this.dinerMonitor.extractDinersWait();
+            this.dinerClientMonitor.extractDinersWait();
             setChanged();
             notifyObservers("2");
         }

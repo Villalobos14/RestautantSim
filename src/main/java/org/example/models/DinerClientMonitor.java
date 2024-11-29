@@ -4,11 +4,11 @@ import org.example.models.enums.DinerState;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.concurrent.ThreadLocalRandom;
-public class DinerMonitor {
+public class DinerClientMonitor {
 
-    private Deque<Diner> queue_wait;
+    private Deque<DinerClient> queue_wait;
     private Restaurant restaurant;
-    private Diner enter;
+    private DinerClient enter;
     private int total;
     private int id;
 
@@ -20,8 +20,8 @@ public class DinerMonitor {
                 '}';
     }
 
-    public DinerMonitor(int total, Restaurant restaurant){
-        this.queue_wait= new LinkedList<Diner>();
+    public DinerClientMonitor(int total, Restaurant restaurant){
+        this.queue_wait= new LinkedList<DinerClient>();
         this.restaurant=restaurant;
         this.enter=null;
         this.total=total;
@@ -36,9 +36,9 @@ public class DinerMonitor {
                 throw new RuntimeException(e);
             }
         }
-        Diner diner= new Diner(id);
+        DinerClient dinerClient = new DinerClient(id);
         this.id++;
-        queue_wait.add(diner);
+        queue_wait.add(dinerClient);
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000));
         } catch (InterruptedException e) {
@@ -68,7 +68,7 @@ public class DinerMonitor {
         this.notifyAll();
     }
 
-    public Diner getEnter() { return this.enter; }
+    public DinerClient getEnter() { return this.enter; }
 
-    public Deque<Diner> getQueue_wait() {return queue_wait;}
+    public Deque<DinerClient> getQueue_wait() {return queue_wait;}
 }

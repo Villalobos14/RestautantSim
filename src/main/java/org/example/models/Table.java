@@ -1,20 +1,20 @@
 package org.example.models;
 import org.example.models.enums.TableState;
 public class Table {
-    private Diner diner;
+    private DinerClient dinerClient;
     private TableState state;
 
-    public Table(Diner diner) {
-        this.diner = diner;
+    public Table(DinerClient dinerClient) {
+        this.dinerClient = dinerClient;
         this.state=TableState.EMPTY;
     }
 
-    public Diner getDiner() {
-        return diner;
+    public DinerClient getDiner() {
+        return dinerClient;
     }
 
-    public void setDiner(Diner diner) {
-        this.diner = diner;
+    public void setDiner(DinerClient dinerClient) {
+        this.dinerClient = dinerClient;
     }
 
     public TableState getState() {
@@ -28,7 +28,7 @@ public class Table {
     @Override
     public String toString() {
         return "Table{" +
-                "diner=" + diner +
+                "diner=" + dinerClient +
                 ", state=" + state +
                 '}';
     }

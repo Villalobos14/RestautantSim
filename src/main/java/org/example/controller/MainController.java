@@ -21,13 +21,13 @@ import java.util.Observer;
 
 
 public class MainController implements Observer{
-    private DinerMonitor dinerMonitor;
+    private DinerClientMonitor dinerClientMonitor;
 
     private ExitMonitor exitMonitor;
 
     private Restaurant restaurant;
 
-    private ChefMonitor chefMonitor;
+    private ChefResMonitor chefResMonitor;
 
     private final Color EmptySpaceColor=Color.web("#232424");
 
@@ -74,8 +74,8 @@ public class MainController implements Observer{
     @FXML
     public void initialize() {
         this.restaurant=new Restaurant();
-        this.dinerMonitor=new DinerMonitor(10, this.restaurant);
-        this.chefMonitor=new ChefMonitor(this.restaurant);
+        this.dinerClientMonitor =new DinerClientMonitor(10, this.restaurant);
+        this.chefResMonitor =new ChefResMonitor(this.restaurant);
         this.exitMonitor=new ExitMonitor(this.restaurant);
     }
 
@@ -85,9 +85,9 @@ public class MainController implements Observer{
     }
 
     private void initSimulation(){
-        ConsumeQueueWait consumeQueueWait= new ConsumeQueueWait(this.dinerMonitor);
-        ProduceQueueWait produceQueueWait = new ProduceQueueWait(this.dinerMonitor);
-        ConsumeCommands consumeCommands= new ConsumeCommands(this.chefMonitor);
+        ConsumeQueueWait consumeQueueWait= new ConsumeQueueWait(this.dinerClientMonitor);
+        ProduceQueueWait produceQueueWait = new ProduceQueueWait(this.dinerClientMonitor);
+        ConsumeCommands consumeCommands= new ConsumeCommands(this.chefResMonitor);
         ConsumeExitQueue ConsumeExitQueue = new ConsumeExitQueue(this.exitMonitor);
 
         consumeQueueWait.addObserver(this);
@@ -134,20 +134,20 @@ public class MainController implements Observer{
     }
 
     private void leaveDiner(){
-        Diner diner=exitMonitor.removeFromExitQueue();
-        StackPane stackPane= getTable(diner.getTableId());
+        DinerClient dinerClient =exitMonitor.removeFromExitQueue();
+        StackPane stackPane= getTable(dinerClient.getTableId());
         Circle circle=(Circle) stackPane.getChildren().get(0);
         Text text = (Text) stackPane.getChildren().get(1);
         Platform.runLater(()->{
             text.setText("-");
             text.setFill(Color.WHITE);
             circle.setFill(EmptySpaceColor);
-            exit_door.setFill(diner.getColor());
+            exit_door.setFill(dinerClient.getColor());
         });
         waitSecond(2);
         Platform.runLater(()->{
             exit_door.setFill(EmptySpaceColor);
-            exit.setFill(diner.getColor());
+            exit.setFill(dinerClient.getColor());
         });
         waitSecond(2);
         Platform.runLater(()->{
@@ -159,15 +159,15 @@ public class MainController implements Observer{
     private void eatTimer(){
         deliverCommand();
         waitSecond(1);
-        Diner diner=chefMonitor.getOrders().remove();
-        StackPane stackPane=getTable(diner.getTableId());
+        DinerClient dinerClient = chefResMonitor.getOrders().remove();
+        StackPane stackPane=getTable(dinerClient.getTableId());
         Text text = (Text) stackPane.getChildren().get(1);
         Timeline timeline = new Timeline();
         EventHandler<ActionEvent> eventHandler = event -> {
             Platform.runLater(()->{
-                text.setText(String.valueOf(diner.getTime()));
+                text.setText(String.valueOf(dinerClient.getTime()));
             });
-            if (diner.getTime() == 0) {
+            if (dinerClient.getTime() == 0) {
                 Platform.runLater(()->{
                     text.setText("Saliendo");
                 });
@@ -178,7 +178,7 @@ public class MainController implements Observer{
         timeline.getKeyFrames().add(keyFrame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-        countdown(diner);
+        countdown(dinerClient);
         waitSecond(1);
         CheckCommands();
     }
@@ -199,14 +199,14 @@ public class MainController implements Observer{
         });
     }
 
-    private void countdown(Diner diner){
-        CounterToEat counterEatDiner=new CounterToEat(this.exitMonitor, diner);
+    private void countdown(DinerClient dinerClient){
+        CounterToEat counterEatDiner=new CounterToEat(this.exitMonitor, dinerClient);
         Thread CounterToEatThread=new Thread(counterEatDiner);
         CounterToEatThread.setDaemon(true);
         CounterToEatThread.start();
     }
     private void makeOrder(){
-        ProduceCommand produceCommand=new ProduceCommand(this.chefMonitor);
+        ProduceCommand produceCommand=new ProduceCommand(this.chefResMonitor);
         Thread produceCommandThread=new Thread(produceCommand);
         produceCommandThread.setDaemon(true);
         produceCommandThread.start();
@@ -267,8 +267,8 @@ public class MainController implements Observer{
         });
     }
     private void addDinerToQueueWait() {
-        Diner newDiner = this.dinerMonitor.getQueue_wait().getLast();
-        Circle circle = new Circle(25, newDiner.getColor()); // Círculo con radio 25 y color del comensal
+        DinerClient newDinerClient = this.dinerClientMonitor.getQueue_wait().getLast();
+        Circle circle = new Circle(25, newDinerClient.getColor()); // Círculo con radio 25 y color del comensal
         Platform.runLater(() -> {
             queue_wait.getChildren().add(circle); // Agrega el círculo a la cola visual
         });

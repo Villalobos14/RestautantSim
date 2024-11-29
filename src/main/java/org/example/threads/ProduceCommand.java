@@ -1,13 +1,13 @@
 package org.example.threads;
 
-import org.example.models.ChefMonitor;
+import org.example.models.ChefResMonitor;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProduceCommand implements Runnable{
-    private ChefMonitor chefMonitor;
+    private ChefResMonitor chefResMonitor;
 
-    public ProduceCommand(ChefMonitor chefMonitor) {
-        this.chefMonitor = chefMonitor;
+    public ProduceCommand(ChefResMonitor chefResMonitor) {
+        this.chefResMonitor = chefResMonitor;
     }
 
     @Override
@@ -18,7 +18,7 @@ public class ProduceCommand implements Runnable{
             throw new RuntimeException(e);
         }
         try {
-            this.chefMonitor.generatedCommand();
+            this.chefResMonitor.generatedCommand();
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }

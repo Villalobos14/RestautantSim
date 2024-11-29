@@ -2,14 +2,14 @@ package org.example.models;
 
 import org.example.models.enums.DinerState;
 import javafx.scene.paint.Color;
-public class Diner {
+public class DinerClient {
     private DinerState state;
     private int id;
     private  int tableId;
     private Color color;
     private int time;
 
-    public Diner(int id){
+    public DinerClient(int id){
         this.id=id;
         this.time=0;
         this.color=GenerateColorRandom();

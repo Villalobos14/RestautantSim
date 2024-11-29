@@ -8,12 +8,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class ExitMonitor {
-    private Deque<Diner> exitQueue;
+    private Deque<DinerClient> exitQueue;
     private Restaurant restaurant;
-    private Diner exit;
+    private DinerClient exit;
 
     public ExitMonitor( Restaurant restaurant) {
-        this.exitQueue = new LinkedList<Diner>();
+        this.exitQueue = new LinkedList<DinerClient>();
         this.restaurant=restaurant;
     }
     public synchronized void extractDinersExit(){
@@ -43,10 +43,10 @@ public class ExitMonitor {
                 throw new RuntimeException(e);
             }
         }
-        Diner dinerOrder=restaurant.getDinnerByState(DinerState.EAT_FINISH);
-        if(dinerOrder!=null){
-            dinerOrder.setState(DinerState.WAIT_ORDER);
-            this.exitQueue.add(dinerOrder);
+        DinerClient dinerClientOrder =restaurant.getDinnerByState(DinerState.EAT_FINISH);
+        if(dinerClientOrder !=null){
+            dinerClientOrder.setState(DinerState.WAIT_ORDER);
+            this.exitQueue.add(dinerClientOrder);
         }
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000));
@@ -56,7 +56,7 @@ public class ExitMonitor {
         this.notifyAll();
     }
 
-    public Diner removeFromExitQueue(){
+    public DinerClient removeFromExitQueue(){
         return this.exitQueue.remove();
     }
 }

@@ -24,18 +24,18 @@ public class Restaurant {
         return true;
     }
 
-    public void setData(Diner diner){
+    public void setData(DinerClient dinerClient){
         for (int i = 0; i < this.tables.length; i++) {
             if(TableState.EMPTY.equals(this.tables[i].getState())) {
-                diner.setTableId(i);
-                this.tables[i].setDiner(diner);
+                dinerClient.setTableId(i);
+                this.tables[i].setDiner(dinerClient);
                 this.tables[i].setState(TableState.BUSY);
                 return;
             }
         }
     }
 
-    public Diner getDinnerByState(DinerState state){
+    public DinerClient getDinnerByState(DinerState state){
         for (int i = 0; i < this.tables.length; i++) {
             if(TableState.BUSY.equals(this.tables[i].getState())) {
                 if(this.tables[i].getDiner().getState().equals(state)){
