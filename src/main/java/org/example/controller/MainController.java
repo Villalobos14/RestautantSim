@@ -1,8 +1,6 @@
 package org.example.controller;
 
-import javafx.scene.Group;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Path;
 import org.example.models.*;
 import org.example.threads.*;
 import javafx.animation.KeyFrame;
@@ -16,13 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.concurrent.ThreadLocalRandom;
-
 
 
 public class MainController implements Observer{
@@ -34,8 +29,7 @@ public class MainController implements Observer{
 
     private ChefMonitor chefMonitor;
 
-    private final Color EmptySpaceColor=Color.web("#98FB98");
-
+    private final Color EmptySpaceColor=Color.web("#232424");
 
     private final Color WaitresColor=Color.web("#FFD700");
 
@@ -118,8 +112,10 @@ public class MainController implements Observer{
 
     @Override
     public void update(Observable observable, Object o) {
+
         switch (Integer.valueOf(String.valueOf(o))) {
             case 1:
+
                 addDinerToQueueWait();
                 break;
             case 2:
@@ -173,7 +169,7 @@ public class MainController implements Observer{
             });
             if (diner.getTime() == 0) {
                 Platform.runLater(()->{
-                    text.setText("-F");
+                    text.setText("Saliendo");
                 });
                 timeline.stop();
             }
@@ -234,11 +230,15 @@ public class MainController implements Observer{
     }
     private void sitDinerAtSomeTable(){
         for(Node hboxNode:tables.getChildren()){
+
             HBox hbox=(HBox) hboxNode;
             Circle waitress = (Circle) hbox.getChildren().get(0);
             StackPane stackPane= (StackPane) hbox.getChildren().get(1);
             Circle diner = (Circle) stackPane.getChildren().get(0);
+
+
             if(EmptySpaceColor.equals(diner.getFill())){
+
                 sitDiner(waitress, stackPane);
                 waitSecond(1);
                 waitresReturnEntrace(waitress);
@@ -255,7 +255,7 @@ public class MainController implements Observer{
             waitress.setFill(WaitresColor);
             diner.setFill(enter_diner.getFill());
             text.setFill(Color.BLACK);
-            text.setText("-W");
+            text.setText("Espera");
             enter_diner.setFill(EmptySpaceColor);
         });
     }
